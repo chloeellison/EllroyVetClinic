@@ -16,6 +16,16 @@ namespace EllroyVetClinic.Models
                 {
                     return;
                 }
+
+                db.Pet.AddRange(
+                    new Pet
+                    {
+                        PetName = "Ellroy",
+                        PetType = "Cat",
+                        PetAge = 6,
+                        Owner = Owner
+                    }
+                );
             }
         }
     }
