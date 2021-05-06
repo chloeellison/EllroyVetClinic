@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EllroyVetClinic.Migrations
 {
     [DbContext(typeof(PetContext))]
-    [Migration("20210506203908_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210506214605_NewMigration")]
+    partial class NewMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -10,11 +10,19 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <select asp-for="CurrentSort" asp-items="Model.SortList">
+        <option value="">sort by...</option>
+    </select>
+    <button type="submit">Sort</button>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Pet[0].PetName)
+                @Html.DisplayNameFor(model => model.Pet[0].PetName)</a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Pet[0].PetType)
@@ -23,10 +31,10 @@
                 @Html.DisplayNameFor(model => model.Pet[0].PetAge)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pet[0].Owner)
+                @Html.DisplayNameFor(model => model.Pet[0].OwnerID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pet[0].Veterinarian)
+                @Html.DisplayNameFor(model => model.Pet[0].VeterinarianId)
             </th>
             <th></th>
         </tr>
@@ -58,3 +66,18 @@
 }
     </tbody>
 </table>
+<hr />
+@{
+    var prevDisabled = "";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+}
+
+<nav aria-label="Pet navigation">
+    <ul class="pagination">
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum -1)">Previous</a></li>
+        <li class="page-item"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum +1)">Next</a></li>
+    </ul>
+</nav>
