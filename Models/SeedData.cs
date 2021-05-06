@@ -60,6 +60,8 @@ namespace EllroyVetClinic.Models
                         Rating = 1,
                     }
                 );
+
+                db.SaveChanges();
                 
                 db.Pet.AddRange(
                     new Pet
@@ -287,6 +289,8 @@ namespace EllroyVetClinic.Models
                         VeterinarianId = 6,
                     }
                 );
+
+                db.SaveChanges();
             }
         }
     }

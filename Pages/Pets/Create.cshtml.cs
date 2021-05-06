@@ -20,8 +20,8 @@ namespace EllroyVetClinic.Pages.Pets
 
         public IActionResult OnGet()
         {
-        ViewData["OwnerID"] = new SelectList(_context.Owner, "OwnerID", "OwnerID");
-        ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "VeterinarianId", "VeterinarianId");
+        ViewData["OwnerID"] = new SelectList(_context.Owner, "OwnerID", "OwnerFirst");
+        ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "VeterinarianId", "VetFirst");
             return Page();
         }
 

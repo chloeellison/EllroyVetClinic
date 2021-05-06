@@ -37,8 +37,8 @@ namespace EllroyVetClinic.Pages.Pets
             {
                 return NotFound();
             }
-           ViewData["OwnerID"] = new SelectList(_context.Owner, "OwnerID", "OwnerID");
-           ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "VeterinarianId", "VeterinarianId");
+           ViewData["OwnerID"] = new SelectList(_context.Owner, "OwnerID", "OwnerFirst");
+           ViewData["VeterinarianId"] = new SelectList(_context.Veterinarian, "VeterinarianId", "VetFirst");
             return Page();
         }
 

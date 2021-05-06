@@ -22,12 +22,18 @@ namespace EllroyVetClinic.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("OwnerFirst")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OwnerLast")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OwnerPhone")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("OwnerID");
@@ -48,9 +54,13 @@ namespace EllroyVetClinic.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PetName")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PetType")
+                        .IsRequired()
+                        .HasMaxLength(12)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("VeterinarianId")
@@ -75,9 +85,13 @@ namespace EllroyVetClinic.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("VetFirst")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("VetLast")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("VeterinarianId");

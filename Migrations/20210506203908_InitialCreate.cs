@@ -2,7 +2,7 @@
 
 namespace EllroyVetClinic.Migrations
 {
-    public partial class NewMigration2 : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,9 +12,9 @@ namespace EllroyVetClinic.Migrations
                 {
                     OwnerID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    OwnerFirst = table.Column<string>(type: "TEXT", nullable: true),
-                    OwnerLast = table.Column<string>(type: "TEXT", nullable: true),
-                    OwnerPhone = table.Column<string>(type: "TEXT", nullable: true)
+                    OwnerFirst = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
+                    OwnerLast = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
+                    OwnerPhone = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,8 +27,8 @@ namespace EllroyVetClinic.Migrations
                 {
                     VeterinarianId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    VetFirst = table.Column<string>(type: "TEXT", nullable: true),
-                    VetLast = table.Column<string>(type: "TEXT", nullable: true),
+                    VetFirst = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
+                    VetLast = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
                     Rating = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -42,8 +42,8 @@ namespace EllroyVetClinic.Migrations
                 {
                     PetId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    PetName = table.Column<string>(type: "TEXT", nullable: true),
-                    PetType = table.Column<string>(type: "TEXT", nullable: true),
+                    PetName = table.Column<string>(type: "TEXT", maxLength: 60, nullable: false),
+                    PetType = table.Column<string>(type: "TEXT", maxLength: 12, nullable: false),
                     PetAge = table.Column<int>(type: "INTEGER", nullable: false),
                     OwnerID = table.Column<int>(type: "INTEGER", nullable: false),
                     VeterinarianId = table.Column<int>(type: "INTEGER", nullable: false)

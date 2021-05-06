@@ -44,10 +44,10 @@
                 @Html.DisplayFor(modelItem => item.PetAge)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Owner.OwnerID)
+                @Html.DisplayFor(modelItem => item.Owner.OwnerFirst)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Veterinarian.VeterinarianId)
+                @Html.DisplayFor(modelItem => item.Veterinarian.VetFirst)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.PetId">Edit</a> |

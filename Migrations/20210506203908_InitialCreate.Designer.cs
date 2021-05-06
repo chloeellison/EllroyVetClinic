@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EllroyVetClinic.Migrations
 {
     [DbContext(typeof(PetContext))]
-    [Migration("20210506195312_NewMigration2")]
-    partial class NewMigration2
+    [Migration("20210506203908_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,12 +24,18 @@ namespace EllroyVetClinic.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("OwnerFirst")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OwnerLast")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OwnerPhone")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("OwnerID");
@@ -50,9 +56,13 @@ namespace EllroyVetClinic.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PetName")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PetType")
+                        .IsRequired()
+                        .HasMaxLength(12)
                         .HasColumnType("TEXT");
 
                     b.Property<int>("VeterinarianId")
@@ -77,9 +87,13 @@ namespace EllroyVetClinic.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("VetFirst")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("VetLast")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("VeterinarianId");
