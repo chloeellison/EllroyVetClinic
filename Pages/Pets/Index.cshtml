@@ -11,6 +11,15 @@
     <a asp-page="Create">Create New</a>
 </p>
 
+<form aso-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by pet type:
+            <input type="text" name="SearchString"
+        </p>
+    </div>
+</form>
+
 <form>
     <select asp-for="CurrentSort" asp-items="Model.SortList">
         <option value="">sort by...</option>

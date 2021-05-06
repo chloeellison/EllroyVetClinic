@@ -27,9 +27,10 @@ namespace EllroyVetClinic.Pages.Pets
 
         [BindProperty(SupportsGet = true)]
         public string CurrentSort {get; set;}
+        public string CurrentFilter {get; set;}
         public SelectList SortList {get; set;}
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string CurrentSort, string searchString)
         {
             var query = _context.Pet.Select(p => p);
             List<SelectListItem> sortItems = new List<SelectListItem> {
@@ -37,6 +38,13 @@ namespace EllroyVetClinic.Pages.Pets
                 new SelectListItem {Text = "PetName Descending", Value = "pet_desc"}
             };
             SortList = new SelectList(sortItems, "Value", "Text", CurrentSort);
+
+            CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                query = query.Where(p => p.PetType.Contains(searchString));
+            }
 
             switch(CurrentSort)
             {
