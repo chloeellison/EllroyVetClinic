@@ -7,7 +7,7 @@ namespace EllroyVetClinic.Models
 {
     public class Veterinarian
     {
-        public int VetId {get; set;} // PRIMARY KEY
+        public int VeterinarianId {get; set;} // PRIMARY KEY
         public string VetFirst {get; set;}
         public string VetLast {get; set;}
         public int Rating {get; set;}
