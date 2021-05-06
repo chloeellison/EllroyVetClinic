@@ -32,7 +32,7 @@ namespace EllroyVetClinic.Pages.Pets
 
         public async Task OnGetAsync(string CurrentSort, string searchString)
         {
-            var query = _context.Pet.Select(p => p);
+            var query = _context.Pet.Include(p => p.Owner).Include(p => p.Veterinarian).Select(p => p);
             List<SelectListItem> sortItems = new List<SelectListItem> {
                 new SelectListItem {Text = "PetName Ascending", Value = "pet_asc"},
                 new SelectListItem {Text = "PetName Descending", Value = "pet_desc"}

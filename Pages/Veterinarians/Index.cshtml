@@ -1,0 +1,38 @@
+@page
+@model EllroyVetClinic.Pages.Veterinarians.IndexModel
+@{
+    ViewData["Title"] = "Veterinarians";
+}
+
+<h1> Index </h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Veterinarians[0].VetFirst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veterinarians[0].VetLast)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veterinarians[0].Rating)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Veterinarians) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VetFirst)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VetLast)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
