@@ -31,10 +31,10 @@
                 @Html.DisplayNameFor(model => model.Pet[0].PetAge)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pet[0].OwnerID)
+                @Html.DisplayNameFor(model => model.Pet[0].Owner)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pet[0].VeterinarianId)
+                @Html.DisplayNameFor(model => model.Pet[0].Veterinarian)
             </th>
             <th></th>
         </tr>
@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.Owner.OwnerFirst)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Veterinarian.VetFirst)
+                @Html.DisplayFor(modelItem => item.Veterinarian.VetLast)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.PetId">Edit</a> |
